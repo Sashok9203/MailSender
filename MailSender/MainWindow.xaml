@@ -40,6 +40,7 @@
                <TextBlock Text="Subject"  FontSize="15" Margin="0,0,10,0" FontWeight="Medium"/>
                <TextBox Text="{Binding Subject}"  IsEnabled ="{Binding IsAuthorized}"/>
             </DockPanel>
+            <CheckBox Content="Importance" FontSize="15" FontWeight="Medium" VerticalContentAlignment="Center" IsChecked="{Binding Importance}" DockPanel.Dock="Bottom"/>
             <TextBlock Text="Message" FontSize="15" FontWeight="Medium" DockPanel.Dock="Top" Margin="0,0,0,5"/>
             <Border  DockPanel.Dock ="Bottom" Background="AliceBlue" BorderBrush="Gray" BorderThickness="1"  CornerRadius="4">
                 <TextBox AcceptsReturn="True" Text="{Binding Message , Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding IsAuthorized}"/>

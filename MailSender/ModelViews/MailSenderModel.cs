@@ -66,6 +66,7 @@ namespace MailSender.ModelViews
             {
                 Date = DateTime.Now,
                 Subject = Subject,
+                Importance = Importance? MessageImportance.High: MessageImportance.Normal,
             };
             message.To.Add( new MailboxAddress(null,To));
             message.From.Add(new MailboxAddress(null, Email));
@@ -74,6 +75,8 @@ namespace MailSender.ModelViews
             try { await smtpClient?.SendAsync(message); }
             catch (Exception ex){ MessageBox.Show(ex.Message, "Error"); }
         }
+
+        public bool Importance { get; set; }
 
         public string ButtonName => IsAuthorized ? "Disconnect" : "Connect";
 
